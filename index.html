@@ -1,0 +1,87 @@
+<html>
+    
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title>Motivation Machine</title>
+        <meta name="description" content="Get motivated!">
+        <link rel="stylesheet" href="main.css">
+        <link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+        <script src="https://use.fontawesome.com/da10332d22.js"></script>
+        
+        <script>
+            
+  $(document).ready(function() {
+                    var quoteBank = ["The only person you are destined to become is the person you decide to be.",
+                                     "The only way to do great work is to love what you do.",
+                                     "Whatever you are - be a good one.",
+                                     "Accept the challenges so that you can feel the exhilaration of victory.",
+                                     "The secret of getting ahead is getting started.",
+                                     "Even if you fall on your face, you're still moving forward.",
+                                     "Well done is better than well said.",
+                                     "You can't build a reputation on what you are going to do.",
+                                     "One finds limits by pushing them.",
+                                     "You can't expect to hit the jackpot if you don't put a few nickels in the machine.",
+                                     "Opportunity does not knock, it presents itself when you beat down the door.",
+                                     "The will to succeed is important, but what's more important is the will to prepare.",
+                                     "Don't let yesterday take up too much of today.",
+                                     "Do all you can with what you have, wherever you are.",
+                                     "If you dream it, you can do it.",
+                                     "Don't wait. The time will never be just right.",
+                                     "Action is the foundational key to all success.",
+                                     "Life is trying things to see if they work.",
+                                     "Don't regret the past, just learn from it.",
+                                     "Believe you can and you're halfway there.",
+                                     "To be the best, you must be able to handle the worst.",
+                                     "An obstacle is often a stepping stone.",
+                                     "Success is going from failure to failure without losing your enthusiasm.",
+                                     "The journey of a thousand miles begins with one step.",
+                                     "Don't count the days, make the days count.",
+                                     "A year from now you may wish you started today.",
+                                     "If you can't outplay them, outwork them.",
+                                     "It's not whether you get knocked down, it's whether you get up.",
+                                     "The time to fix the roof is when the sun is shining.",
+                                     "Turn your wounds into wisdom.",
+                                     "In teaching others, we teach ourselves."
+                                    ];
+      var quoteBank = quoteBank.sort(function() {return 0.5 - Math.random()})
+      var colours = ["#1abc9c", "#3498db", "#2ecc71", "#9b59b6", "#e67e22", "#e74c3c", "#f39c12", "#d35400", "#c0392b", "#f1c40f", "#16a085",
+                    "#27ae60", "#2980b9", "#8e44ad", "#7CEECE", "#D33257", "#71BA51", "#FF6766", "#9684A3", "#FCB941", "#64DDBB", "#E76B6B", "#1DABB8", "#D8335B", "#4CD4B0"];
+      var colours = colours.sort(function() {return 0.5 - Math.random()})
+      $("body").css("background-color", colours[0])
+      i = 0;
+      j = 1;
+    $(window).on("touchstart click", function(){
+        $("#quote").html(quoteBank[i]);
+        $("body").css("background-color", colours[j])
+        if (i >= 1) {
+        var postLink = 'https://twitter.com/intent/tweet?text=' + quoteBank[(i-1)] + '&hashtags=motivation';
+        document.getElementById("link").setAttribute("href", postLink);
+        }
+        if (i < quoteBank.length) {
+        i++;
+        }
+        if (j < colours.length) {
+        j++;
+        }
+        if (i === quoteBank.length) {
+            i = 0;
+        }
+        if (j === colours.length) {
+            j = 0;
+        }
+    });
+  });
+</script>
+        
+    </head>
+    <body>
+        <div id="twitter">
+            <a id="link" href="https://twitter.com/intent/tweet" target="_blank"><i id="twitter-icon" class="fa fa-twitter fa-5x "></i></a>
+        </div>
+<div id="main">
+        <p id="quote">Click anywhere for motivation!</p>
+        </div>
+    </body>
+</html>

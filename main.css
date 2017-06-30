@@ -1,0 +1,26 @@
+body {
+    background-color: #44BBFF;    
+}
+
+p {
+    font-family: 'Open Sans', sans-serif;
+    font-size: 4em;
+    text-align: center;
+    color: white;
+    padding: 2em 2em 4em 2em;
+    margin: 0;
+}
+
+#twitter {
+    text-align: center;
+    margin: 12em 0em 0em 0em;
+    color: white;
+}
+
+a {
+    color: white;
+}
+
+.searchbar {  
+    margin: 50px;
+}
